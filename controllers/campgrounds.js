@@ -24,8 +24,9 @@ module.exports.index = async (req, res) => {
         campgrounds.length
       ) {
         res.render("campgrounds/index", { campgrounds, search });
+      } else {
+        res.render("campgrounds/nearestResult", { campgrounds, search });
       }
-      res.render("campgrounds/nearestResult", { campgrounds, search });
     }
   } catch {
     const campgrounds = await Campground.find({}).sort({ createdAt: -1 });
@@ -38,32 +39,32 @@ module.exports.renderNewForm = (req, res) => {
 };
 
 module.exports.createCampground = async (req, res) => {
-    const geoData = await geocoder
-      .forwardGeocode({
-        query: req.body.campground.location,
-        limit: 1,
-      })
-      .send();
-      if (!geoData.body.features[0]) {
-        req.flash("error", "Unable to find location!");
-        res.redirect(`/campgrounds/new`);
-      }
-    req.body.campground.location = geoData.body.features[0].place_name;
-    if (req.files.length >= 1 && geoData.body.features.length) {
-      const campground = new Campground(req.body.campground);
-      campground.geometry = geoData.body.features[0].geometry;
-      campground.images = req.files.map((f) => ({
-        url: f.path,
-        filename: f.filename,
-      }));
-      campground.author = req.user._id;
-      await campground.save();
-      req.flash("success", "New campground created!");
-      res.redirect(`/campgrounds/${campground._id}`);
-    } else {
-      req.flash("error", "Image required!");
-      res.redirect("/campgrounds/new");
-    }
+  const geoData = await geocoder
+    .forwardGeocode({
+      query: req.body.campground.location,
+      limit: 1,
+    })
+    .send();
+  if (!geoData.body.features[0]) {
+    req.flash("error", "Unable to find location!");
+    res.redirect(`/campgrounds/new`);
+  }
+  req.body.campground.location = geoData.body.features[0].place_name;
+  if (req.files.length >= 1 && geoData.body.features.length) {
+    const campground = new Campground(req.body.campground);
+    campground.geometry = geoData.body.features[0].geometry;
+    campground.images = req.files.map((f) => ({
+      url: f.path,
+      filename: f.filename,
+    }));
+    campground.author = req.user._id;
+    await campground.save();
+    req.flash("success", "New campground created!");
+    res.redirect(`/campgrounds/${campground._id}`);
+  } else {
+    req.flash("error", "Image required!");
+    res.redirect("/campgrounds/new");
+  }
 };
 
 module.exports.showCampground = async (req, res) => {

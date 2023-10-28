@@ -4,8 +4,7 @@ const map = new mapboxgl.Map({
   container: "cluster-map",
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
   style: "mapbox://styles/mapbox/outdoors-v12",
-  center: [5.421548, 51.910496],
-  zoom: 6,
+  center: campgrounds.features[0].geometry.coordinates,
 });
 
 const bounds = new mapboxgl.LngLatBounds();
@@ -17,11 +16,17 @@ campgrounds.features.forEach(function (f) {
 map.fitBounds(bounds, {
   padding: { top: 40, bottom: 40 },
   maxZoom: 9,
-  center: campgrounds.features[0].geometry.coordinates,
 });
 
 if (campgrounds.features.length < 10) {
   const { popUpMarkup } = campgrounds.features[0].properties;
+
+  map.fitBounds(bounds, {
+    padding: { top: 40, bottom: 40 },
+    maxZoom: 9,
+    minZoom: 3,
+    center: campgrounds.features[0].geometry.coordinates,
+  });
 
   const marker = new mapboxgl.Marker({ color: "#FF0000" })
     .setLngLat(campgrounds.features[0].geometry.coordinates, { offset: 5 })
