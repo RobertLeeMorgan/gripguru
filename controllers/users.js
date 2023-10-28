@@ -7,6 +7,15 @@ module.exports.renderRegister = (req, res) => {
 module.exports.register = async (req, res) => {
   try {
     const { email, username, password } = req.body;
+    var regex = /^(?=.*\d)(?=.*[a-z])[a-zA-Z0-9]{6,}$/;
+    if (!password.match(regex)) {
+      throw new Error(
+        "Password must be at least 6 characters, contain one uppercase letter, a lowercase letter, and a number!"
+      );
+    }
+    if (username.length < 5) {
+      throw new Error("Username must be at least 5 characters");
+    }
     const user = new User({ email, username });
     const registeredUser = await User.register(user, password);
     req.login(registeredUser, (err) => {

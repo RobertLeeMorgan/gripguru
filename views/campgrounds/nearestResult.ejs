@@ -5,15 +5,13 @@
 </div>
 
 <div class="container mt-3">
-  <form action="/campgrounds" method="GET" class="mb-3">
+  <form action="/campgrounds" method="GET" class=" mb-3">
     <div class="input-group input-group-lg form-inline">
       <button class="btn btn-outline-success" id="search" type="submit">Search</button>
     <input type="text" name="search" id="search" placeholder="Search for a city" class="form-control">
   </div>
-  <% if(search && campgrounds.length > 10) {%>
-    <h3 class="card-title m-3 text text-center">No results near <%= search.charAt(0).toUpperCase()+search.slice(1) %></h3>
-    <% } %>
   </form>
+  <h3 class="card-title m-3 text text-center">Displaying nearest results for <%= search.charAt(0).toUpperCase()+search.slice(1) %></h3>
   <% for( let campground of campgrounds) { %>
   <div class="card mb-3">
     <div class="row d-flex align-items-center">
@@ -50,9 +48,9 @@
   </div>
   <% } %>
 </div>
-
   <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>'
     const campgrounds = { features: <%- JSON.stringify(campgrounds)%> };
   </script>
   <script src="/javascripts/clusterMap.js"></script>
+</div>

@@ -8,7 +8,15 @@ const ImageSchema = new Schema({
 });
 
 ImageSchema.virtual("thumbnail").get(function () {
-  return this.url.replace("/upload", "/upload/w_200");
+  return this.url.replace("/upload", "/upload/w_200,h_120,c_limit");
+});
+
+ImageSchema.virtual("index").get(function () {
+  return this.url.replace("/upload", "/upload/h_250,w_400,c_fill");
+});
+
+ImageSchema.virtual("show").get(function () {
+  return this.url.replace("/upload", "/upload/h_400,w_600,c_fill");
 });
 
 const opts = { toJSON: { virtuals: true } };
@@ -16,7 +24,10 @@ const opts = { toJSON: { virtuals: true } };
 const CampgroundSchema = new Schema(
   {
     title: String,
-    images: [ImageSchema],
+    images: {
+      type: [ImageSchema],
+      required: true,
+    },
     geometry: {
       type: {
         type: String,
@@ -31,6 +42,7 @@ const CampgroundSchema = new Schema(
     price: Number,
     description: String,
     location: String,
+    createdAt: { type: Date, default: Date.now },
     author: {
       type: Schema.Types.ObjectId,
       ref: "User",
@@ -60,5 +72,7 @@ CampgroundSchema.post("findOneAndDelete", async function (doc) {
     });
   }
 });
+
+CampgroundSchema.index({ coordinates: "2dsphere" });
 
 module.exports = mongoose.model("Campground", CampgroundSchema);

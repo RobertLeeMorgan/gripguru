@@ -5,8 +5,32 @@ const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
 const { cloudinary } = require("../cloudinary");
 
 module.exports.index = async (req, res) => {
-  const campgrounds = await Campground.find({});
-  res.render("campgrounds/index", { campgrounds });
+  const { search } = req.query;
+  try {
+    const geoData = await geocoder
+      .forwardGeocode({
+        query: req.query.search,
+        limit: 1,
+      })
+      .send();
+    if (geoData.body.features.length) {
+      const data = geoData.body.features[0].geometry.coordinates;
+      const campgrounds = await Campground.find({
+        geometry: { $nearSphere: { coordinates: data }, $maxDistance: 30000 },
+      });
+      if (
+        data.sort().join(",") ===
+          campgrounds[0].geometry.coordinates.sort().join(",") &&
+        campgrounds.length
+      ) {
+        res.render("campgrounds/index", { campgrounds, search });
+      }
+      res.render("campgrounds/nearestResult", { campgrounds, search });
+    }
+  } catch {
+    const campgrounds = await Campground.find({}).sort({ createdAt: -1 });
+    res.render("campgrounds/index", { campgrounds, search });
+  }
 };
 
 module.exports.renderNewForm = (req, res) => {
@@ -14,22 +38,32 @@ module.exports.renderNewForm = (req, res) => {
 };
 
 module.exports.createCampground = async (req, res) => {
-  const geoData = await geocoder
-    .forwardGeocode({
-      query: req.body.campground.location,
-      limit: 1,
-    })
-    .send();
-  const campground = new Campground(req.body.campground);
-  campground.geometry = geoData.body.features[0].geometry;
-  campground.images = req.files.map((f) => ({
-    url: f.path,
-    filename: f.filename,
-  }));
-  campground.author = req.user._id;
-  await campground.save();
-  req.flash("success", "New campground created!");
-  res.redirect(`/campgrounds/${campground._id}`);
+    const geoData = await geocoder
+      .forwardGeocode({
+        query: req.body.campground.location,
+        limit: 1,
+      })
+      .send();
+      if (!geoData.body.features[0]) {
+        req.flash("error", "Unable to find location!");
+        res.redirect(`/campgrounds/new`);
+      }
+    req.body.campground.location = geoData.body.features[0].place_name;
+    if (req.files.length >= 1 && geoData.body.features.length) {
+      const campground = new Campground(req.body.campground);
+      campground.geometry = geoData.body.features[0].geometry;
+      campground.images = req.files.map((f) => ({
+        url: f.path,
+        filename: f.filename,
+      }));
+      campground.author = req.user._id;
+      await campground.save();
+      req.flash("success", "New campground created!");
+      res.redirect(`/campgrounds/${campground._id}`);
+    } else {
+      req.flash("error", "Image required!");
+      res.redirect("/campgrounds/new");
+    }
 };
 
 module.exports.showCampground = async (req, res) => {
@@ -55,6 +89,17 @@ module.exports.renderEditForm = async (req, res) => {
 
 module.exports.updateCampground = async (req, res) => {
   const { id } = req.params;
+  const geoData = await geocoder
+    .forwardGeocode({
+      query: req.body.campground.location,
+      limit: 1,
+    })
+    .send();
+  if (!geoData.body.features[0]) {
+    req.flash("error", "Unable to find location!");
+    res.redirect(`/campgrounds/${id}/edit`);
+  }
+  req.body.campground.location = geoData.body.features[0].place_name;
   const campground = await Campground.findByIdAndUpdate(id, {
     ...req.body.campground,
   });
@@ -65,12 +110,17 @@ module.exports.updateCampground = async (req, res) => {
   campground.images.push(...imgs);
   await campground.save();
   if (req.body.deleteImages) {
-    for (let filename of req.body.deleteImages) {
-      await cloudinary.uploader.destroy(filename);
+    if (campground.images.length <= req.body.deleteImages.length) {
+      req.flash("error", "Can not delete all images!");
+      res.redirect(`/campgrounds/${campground._id}/edit`);
+    } else {
+      for (let filename of req.body.deleteImages) {
+        await cloudinary.uploader.destroy(filename);
+      }
+      await campground.updateOne({
+        $pull: { images: { filename: { $in: req.body.deleteImages } } },
+      });
     }
-    await campground.updateOne({
-      $pull: { images: { filename: { $in: req.body.deleteImages } } },
-    });
   }
   req.flash("success", "Updated campground!");
   res.redirect(`/campgrounds/${campground._id}`);
@@ -78,7 +128,9 @@ module.exports.updateCampground = async (req, res) => {
 
 module.exports.deleteCampground = async (req, res) => {
   const { id } = req.params;
-  await Campground.findByIdAndDelete(id);
+  const campground = await Campground.findByIdAndDelete(id);
+  for (let image of campground.images)
+    await cloudinary.uploader.destroy(image.filename);
   req.flash("success", "Campground deleted!");
   res.redirect("/campgrounds");
 };

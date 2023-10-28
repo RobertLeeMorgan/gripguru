@@ -1,18 +1,41 @@
 mapboxgl.accessToken = mapToken;
+
 const map = new mapboxgl.Map({
   container: "cluster-map",
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-  style: "mapbox://styles/mapbox/light-v11",
-  center: [-103.5917, 40.6699],
-  zoom: 3,
+  style: "mapbox://styles/mapbox/outdoors-v12",
+  center: [5.421548, 51.910496],
+  zoom: 6,
 });
 
+const bounds = new mapboxgl.LngLatBounds();
+
+campgrounds.features.forEach(function (f) {
+  bounds.extend(f.geometry.coordinates);
+});
+
+map.fitBounds(bounds, {
+  padding: { top: 40, bottom: 40 },
+  maxZoom: 9,
+  center: campgrounds.features[0].geometry.coordinates,
+});
+
+if (campgrounds.features.length < 10) {
+  const { popUpMarkup } = campgrounds.features[0].properties;
+
+  const marker = new mapboxgl.Marker({ color: "#FF0000" })
+    .setLngLat(campgrounds.features[0].geometry.coordinates, { offset: 5 })
+    .setPopup(new mapboxgl.Popup().setHTML(popUpMarkup)) // add popup
+    .addTo(map)
+    .togglePopup();
+}
 map.addControl(new mapboxgl.NavigationControl());
 
 map.on("load", () => {
   // Add a new source from our GeoJSON data and
   // set the 'cluster' option to true. GL-JS will
   // add the point_count property to your source data.
+
   map.addSource("campgrounds", {
     type: "geojson",
     // Point to GeoJSON data. This example visualizes all M1.0+ campgrounds

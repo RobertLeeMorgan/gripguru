@@ -1,60 +1,61 @@
 <% layout('layouts/boilerplate') %>
-
-<div class="conatiner d-flex justify-content-center align-items-center mt-1">
-  <div class="row flex-fill">
-    <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
-      <div class="card shadow">
-        <img
-          src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1740&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          class="card-img-top"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Register</h5>
-          <form
-            action="/register"
-            method="POST"
-            class="validated-form"
-            novalidate
-          >
-            <div class="mb-3">
-              <label class="form-label" for="username">Username</label>
-              <input
-                class="form-control"
-                type="text"
-                name="username"
-                id="username"
-                required
-                autofocus
-              />
-              <div class="valid-feedback">Looks good!</div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="email">Email</label>
-              <input
-                class="form-control"
-                type="email"
-                name="email"
-                id="email"
-                required
-              />
-              <div class="valid-feedback">Looks good!</div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="password">Password</label>
-              <input
-                class="form-control"
-                type="password"
-                name="password"
-                id="password"
-                required
-              />
-              <div class="valid-feedback">Looks good!</div>
-            </div>
-            <div class="d-grid">
-              <button class="btn btn-success">Register</button>
-            </div>
-          </form>
+<div class="container mt-5">
+  <div class="conatiner d-flex justify-content-center align-items-center mt-1">
+    <div class="row flex-fill">
+      <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+        <div class="card shadow">
+          <img
+            src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1740&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            class="card-img-top"
+          />
+          <div class="card-body">
+            <h5 class="card-title text-center">Register</h5>
+            <form
+              action="/register"
+              method="POST"
+              class="validated-form"
+              novalidate
+            >
+              <div class="mb-3">
+                <label class="form-label" for="username">Username</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="username"
+                  id="username"
+                  required
+                  autofocus
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="password">Password</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  name="password"
+                  id="password"
+                  required
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-success">Register</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

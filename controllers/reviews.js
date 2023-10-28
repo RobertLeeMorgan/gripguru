@@ -10,12 +10,17 @@ module.exports.createReview = async (req, res) => {
       `/campgrounds/${campground._id}/?data=${req.body.review.body}`
     );
   }
-  review.author = req.user._id;
-  campground.reviews.push(review);
-  await review.save();
-  await campground.save();
-  req.flash("success", "Created new review!");
-  res.redirect(`/campgrounds/${campground._id}`);
+  if (!campground.reviews.indexOf(req.user._id)) {
+    review.author = req.user._id;
+    campground.reviews.push(review);
+    await review.save();
+    await campground.save();
+    req.flash("success", "Created new review!");
+    res.redirect(`/campgrounds/${campground._id}`);
+  } else {
+    req.flash("error", "You can only leave 1 review per campsite!");
+    res.redirect(`/campgrounds/${campground._id}`);
+  }
 };
 
 module.exports.deleteReview = async (req, res) => {

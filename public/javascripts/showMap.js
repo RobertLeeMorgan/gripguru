@@ -4,7 +4,7 @@ const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/outdoors-v12",
   center: campground.geometry.coordinates,
-  zoom: 9,
+  zoom: 10,
 });
 
 map.addControl(new mapboxgl.NavigationControl());
@@ -17,7 +17,7 @@ new mapboxgl.Marker({ color: "#FF0000" })
       closeButton: false,
       closeOnMove: true,
     }).setHTML(
-      `<h4>${campground.title}</h4><p class="mb-0">${campground.location}</p>`
+      `<h4>${campground.title}</h4><h6 class="mb-0">${campground.location}</h6>`
     )
   )
   .addTo(map);
