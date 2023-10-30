@@ -9,6 +9,7 @@
     <div class="input-group input-group-lg form-inline">
       <button class="btn btn-outline-success" id="search" type="submit">Search</button>
     <input type="text" name="search" id="search" placeholder="Search for a city" class="form-control">
+    </div>
   </form>
   <h3 class="card-title m-3 text text-center">Displaying nearest results for <%= search.charAt(0).toUpperCase()+search.slice(1) %></h3>
   <% for( let campground of campgrounds) { %>
