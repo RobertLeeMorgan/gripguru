@@ -14,7 +14,7 @@ campgrounds.features.forEach(function (f) {
 });
 
 map.fitBounds(bounds, {
-  padding: { top: 40, bottom: 40 },
+  padding: { top: 20, bottom: 20 },
   maxZoom: 9,
 });
 
@@ -71,7 +71,7 @@ map.on("load", () => {
         30,
         "#C3F64E",
       ],
-      "circle-radius": ["step", ["get", "point_count"], 20, 10, 25, 30, 35],
+      "circle-radius": ["step", ["get", "point_count"], 20, 10, 25, 50, 35],
     },
   });
 

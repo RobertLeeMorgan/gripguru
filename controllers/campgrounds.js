@@ -16,7 +16,7 @@ module.exports.index = async (req, res) => {
     if (geoData.body.features.length) {
       const data = geoData.body.features[0].geometry.coordinates;
       const campgrounds = await Campground.find({
-        geometry: { $nearSphere: { coordinates: data }, $maxDistance: 30000 },
+        geometry: { $nearSphere: { coordinates: data }, $maxDistance: 50000 },
       });
       if (
         data.sort().join(",") ===
@@ -101,6 +101,7 @@ module.exports.updateCampground = async (req, res) => {
     res.redirect(`/campgrounds/${id}/edit`);
   }
   req.body.campground.location = geoData.body.features[0].place_name;
+  req.body.campground.geometry = geoData.body.features[0].geometry;
   const campground = await Campground.findByIdAndUpdate(id, {
     ...req.body.campground,
   });
@@ -109,7 +110,6 @@ module.exports.updateCampground = async (req, res) => {
     filename: f.filename,
   }));
   campground.images.push(...imgs);
-  await campground.save();
   if (req.body.deleteImages) {
     if (campground.images.length <= req.body.deleteImages.length) {
       req.flash("error", "Can not delete all images!");
@@ -123,6 +123,7 @@ module.exports.updateCampground = async (req, res) => {
       });
     }
   }
+  await campground.save();
   req.flash("success", "Updated campground!");
   res.redirect(`/campgrounds/${campground._id}`);
 };

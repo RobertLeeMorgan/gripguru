@@ -2,16 +2,19 @@ const Review = require("../models/review");
 const Campground = require("../models/campground");
 
 module.exports.createReview = async (req, res) => {
-  const campground = await Campground.findById(req.params.id);
-  const review = new Review(req.body.review);
-  if (review.rating === 0) {
+  if (req.body.review.rating < 1) {
     req.flash("error", "Rating can not be 0!");
     return res.redirect(
-      `/campgrounds/${campground._id}/?data=${req.body.review.body}`
+      `/campgrounds/${req.params.id}/?data=${req.body.review.body}`
     );
   }
-  if (!campground.reviews.indexOf(req.user._id)) {
-    review.author = req.user._id;
+  const campground = await Campground.findById(req.params.id);
+  const reviewIds = campground.reviews
+  const userId= req.user._id
+  const alreadyReviewed = await Review.find({$and: [{_id: { $in: reviewIds }}, { author: userId}]});
+  if (!alreadyReviewed.length) {
+    const review = new Review(req.body.review);
+    review.author = userId;
     campground.reviews.push(review);
     await review.save();
     await campground.save();

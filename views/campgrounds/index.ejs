@@ -5,7 +5,7 @@
 </div>
 
 <div class="container mt-3">
-  <form action="/campgrounds" method="GET" class="mb-3">
+  <form action="/campgrounds" method="GET" class="m-3">
     <div class="input-group input-group-lg form-inline">
       <button class="btn btn-outline-success" id="search" type="submit">Search</button>
     <input type="text" name="search" id="search" placeholder="Search for a city" class="form-control">
@@ -14,36 +14,26 @@
     <h3 class="card-title m-3 text text-center">No results near <%= search.charAt(0).toUpperCase()+search.slice(1) %></h3>
     <% } %>
   </form>
-  <% for( let campground of campgrounds) { %>
+  <% for(campground of campgrounds) { %>
   <div class="card mb-3">
     <div class="row d-flex align-items-center">
       <div class="col-md-4 text-center text-md-start mt-2 mt-md-0">
-        <% if(campground.images.length) {%>
         <img
           crossorigin="anonymous"
           class="img-fluid"
           alt=""
           src="<%= campground.images[0].index %>"
         />
-        <% } else { %>
-        <img
-          crossorigin="anonymous"
-          class="img-fluid"
-          alt=""
-          src="https://res.cloudinary.com/dkni8tivd/image/upload/v1697981448/YelpCamp/hcvzuggrw6zzerhhu4ez.jpg"
-        />
-        <% } %>
       </div>
       <div class="col-md-8 text-center text-md-start">
         <div class="card-body">
           <h4 class="card-title mb-2"><%= campground.title %></h4>
-          <p class="card-text mb-2"><%= campground.description %></p>
+          <p class="card-text mb-2 me-md-5"><%= campground.description %></p>
           <p class="card-text">
             <p class="text-secondary mb-4"><%= campground.location %></p>
           </p>
           <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"
-            >View Details</a
-          >
+            >View Details</a>
         </div>
       </div>
     </div>

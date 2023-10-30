@@ -14,13 +14,13 @@
         <div>
           <h3 class="float-md-start mb-0">YelpCamp</h3>
           <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="/campgrounds">Campgrounds</a>
+            <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
+            <a class="nav-link mx-2" href="/campgrounds">Campgrounds</a>
             <% if(!currentUser) { %>
-            <a class="nav-link" href="/login">Login</a>
-            <a class="nav-link" href="/register">Register</a>
+            <a class="nav-link mx-2" href="/login">Login</a>
+            <a class="nav-link mx-2" href="/register">Register</a>
             <% } else { %>
-            <a class="nav-link" href="/logout">Logout</a>
+            <a class="nav-link mx-2" href="/logout">Logout</a>
             <% } %>
           </nav>
         </div>
@@ -28,9 +28,8 @@
       <main class="px-3">
         <h1>YelpCamp</h1>
         <p class="lead">
-          Welcome to YelpCamp! <br />
           Jump right in and explore our many campgrounds. <br />
-          Feel free to share some of your own and comment on others!
+          Feel free to share your own campsite and comment on others!
         </p>
         <a
           href="/campgrounds"
