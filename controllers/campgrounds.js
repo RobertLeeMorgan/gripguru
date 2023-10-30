@@ -9,28 +9,32 @@ module.exports.index = async (req, res) => {
   try {
     const geoData = await geocoder
       .forwardGeocode({
-        query: req.query.search,
+        query: search,
         limit: 1,
       })
       .send();
-    if (geoData.body.features.length) {
-      const data = geoData.body.features[0].geometry.coordinates;
-      const campgrounds = await Campground.find({
-        geometry: { $nearSphere: { coordinates: data }, $maxDistance: 50000 },
-      });
-      if (
-        data.sort().join(",") ===
-          campgrounds[0].geometry.coordinates.sort().join(",") &&
-        campgrounds.length
-      ) {
-        res.render("campgrounds/index", { campgrounds, search });
-      } else {
-        res.render("campgrounds/nearestResult", { campgrounds, search });
-      }
+    const data = geoData.body.features[0].geometry.coordinates;
+    const campgrounds = await Campground.find({
+      geometry: { $nearSphere: { coordinates: data }, $maxDistance: 50000 },
+    });
+    if (campgrounds.length) {
+      res.render("campgrounds/nearestResult", { campgrounds, search });
+    } else {
+      throw error;
     }
   } catch {
     const campgrounds = await Campground.find({}).sort({ createdAt: -1 });
-    res.render("campgrounds/index", { campgrounds, search });
+    if (!req.query.page) {
+      const altCamp = await Campground.paginate(
+        {},
+        { limit: 8, sort: { createdAt: -1 } }
+      );
+      res.render("campgrounds/index", { altCamp, campgrounds, search });
+    } else {
+      const { page } = req.query;
+      const altCamp = await Campground.paginate({}, { page });
+      res.status(200).json(altCamp);
+    }
   }
 };
 

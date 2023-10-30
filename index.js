@@ -48,6 +48,8 @@ const scriptSrcUrls = [
   "https://api.mapbox.com/",
   "https://kit.fontawesome.com/",
   "https://cdnjs.cloudflare.com/",
+  "https://code.jquery.com",
+  
 ];
 const styleSrcUrls = [
   "https://kit-free.fontawesome.com/",

@@ -25,14 +25,17 @@
     "helmet": "^7.0.0",
     "install": "^0.13.0",
     "joi": "^17.11.0",
-    "locus": "^2.0.4",
     "method-override": "^3.0.0",
     "mongoose": "^7.6.2",
+    "mongoose-paginate-v2": "^1.7.4",
     "multer": "^1.4.5-lts.1",
     "multer-storage-cloudinary": "^4.0.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0",
     "sanitize-html": "^2.11.0"
+  },
+  "devDependencies": {
+    "locus": "^2.0.4"
   }
 }
