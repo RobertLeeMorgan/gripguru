@@ -32,7 +32,7 @@ module.exports.index = async (req, res) => {
       res.render("campgrounds/index", { altCamp, campgrounds, search });
     } else {
       const { page } = req.query;
-      const altCamp = await Campground.paginate({}, { page });
+      const altCamp = await Campground.paginate({}, { page, limit: 8, sort: { createdAt: -1 } } );
       res.status(200).json(altCamp);
     }
   }
