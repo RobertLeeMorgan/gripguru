@@ -32,7 +32,10 @@ module.exports.index = async (req, res) => {
       res.render("gyms/index", { altGym, gyms, search });
     } else {
       const { page } = req.query;
-      const altGym = await Gym.paginate({}, { page, limit: 8, sort: { createdAt: -1 } } );
+      const altGym = await Gym.paginate(
+        {},
+        { page, limit: 8, sort: { createdAt: -1 } }
+      );
       res.status(200).json(altGym);
     }
   }
