@@ -22,7 +22,7 @@ ImageSchema.virtual("show").get(function () {
 
 const opts = { toJSON: { virtuals: true } };
 
-const CampgroundSchema = new Schema(
+const GymSchema = new Schema(
   {
     title: String,
     images: {
@@ -58,13 +58,13 @@ const CampgroundSchema = new Schema(
   opts
 );
 
-CampgroundSchema.virtual("properties.popUpMarkup").get(function () {
+GymSchema.virtual("properties.popUpMarkup").get(function () {
   return `
-  <h4><a href="/campgrounds/${this._id}">${this.title}</a></h4>
+  <h4><a href="/gyms/${this._id}">${this.title}</a></h4>
   <p>${this.description.substring(0, 60)}...</p>`;
 });
 
-CampgroundSchema.post("findOneAndDelete", async function (doc) {
+GymSchema.post("findOneAndDelete", async function (doc) {
   if (doc) {
     await Review.deleteMany({
       _id: {
@@ -74,8 +74,8 @@ CampgroundSchema.post("findOneAndDelete", async function (doc) {
   }
 });
 
-CampgroundSchema.index({ coordinates: "2dsphere" });
+GymSchema.index({ coordinates: "2dsphere" });
 
-CampgroundSchema.plugin(mongoosePaginate)
+GymSchema.plugin(mongoosePaginate)
 
-module.exports = mongoose.model("Campground", CampgroundSchema);
+module.exports = mongoose.model("Gym", GymSchema);

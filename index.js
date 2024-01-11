@@ -17,10 +17,10 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 const mongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
-const dbUrl = process.env.DB_URL || "mongodb://127.0.0.1:27017/yelp-camp";
+const dbUrl = process.env.DB_URL || "mongodb://127.0.0.1:27017/grip-guru";
 const secret = process.env.SECRET || "secret";
 
-const campgrounds = require("./routes/campgrounds");
+const gyms = require("./routes/gyms");
 const reviews = require("./routes/reviews");
 const users = require("./routes/users");
 
@@ -100,7 +100,7 @@ store.on("error", function (e) {
 
 const sessionConfig = {
   store,
-  name: "yelp",
+  name: "guru",
   secret,
   resave: false,
   saveUninitialized: true,
@@ -129,8 +129,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/", users);
-app.use("/campgrounds", campgrounds);
-app.use("/campgrounds/:id/reviews", reviews);
+app.use("/gyms", gyms);
+app.use("/gyms/:id/reviews", reviews);
 
 app.get("/", (req, res) => {
   res.render("home");

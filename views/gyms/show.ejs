@@ -5,9 +5,9 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="card mb-3">
-        <div id="campgroundCarousel" class="carousel slide carousel-fade m-2">
+        <div id="gymCarousel" class="carousel slide carousel-fade m-2">
           <div class="carousel-inner">
-            <% campground.images.forEach((img, i) => { %>
+            <% gym.images.forEach((img, i) => { %>
             <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
               <img
                 crossorigin="anonymous"
@@ -18,11 +18,11 @@
             </div>
             <% }) %>
           </div>
-          <% if(campground.images.length > 1) {%>
+          <% if(gym.images.length > 1) {%>
           <button
             class="carousel-control-prev"
             type="button"
-            data-bs-target="#campgroundCarousel"
+            data-bs-target="#gymCarousel"
             data-bs-slide="prev"
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -31,7 +31,7 @@
           <button
             class="carousel-control-next"
             type="button"
-            data-bs-target="#campgroundCarousel"
+            data-bs-target="#gymCarousel"
             data-bs-slide="next"
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -40,29 +40,29 @@
           <% } %>
         </div>
         <div class="card-body">
-          <h5 class="card-title"><%= campground.title %></h5>
-          <p class="card-text"><%= campground.description %></p>
+          <h5 class="card-title"><%= gym.title %></h5>
+          <p class="card-text"><%= gym.description %></p>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item text-secondary">
-            <%= campground.location %>
+            <%= gym.location %>
           </li>
-          <li class="list-group-item">€<%= campground.price %>/night</li>
+          <li class="list-group-item">€<%= gym.price %>/session</li>
         </ul>
-        <% if(currentUser && campground.author.equals(currentUser._id)) {%>
+        <% if(currentUser && gym.author.equals(currentUser._id)) {%>
         <div class="card-body text-center">
           <div class="row">
             <div class="col">
               <a
                 class="card-link btn btn-info col-8"
-                href="/campgrounds/<%= campground._id %>/edit"
+                href="/gyms/<%= gym._id %>/edit"
                 >Edit</a
               >
             </div>
             <div class="col">
               <form
                 class="d-inline"
-                action="/campgrounds/<%= campground._id %>?_method=DELETE"
+                action="/gyms/<%= gym._id %>?_method=DELETE"
                 method="POST"
               >
                 <button class="btn btn-danger col-8">Delete</button>
@@ -72,14 +72,14 @@
         </div>
         <% } %>
         <div class="card-footer text-secondary">
-          <i>Submitted by </i><%= campground.author.username %> <i>on</i>
-          <%=campground.createdAt.toGMTString() %>
+          <i>Submitted by </i><%= gym.author.username %> <i>on</i>
+          <%=gym.createdAt.toGMTString() %>
         </div>
       </div>
     </div>
     <div class="col-lg-6">
       <div id="map" class="mb-3"></div>
-      <% for(let review of campground.reviews) { %>
+      <% for(let review of gym.reviews) { %>
       <div class="card mb-3">
         <div class="card-body">
           <div class="row">
@@ -93,7 +93,7 @@
             </div>
             <div class="col-2 text-center">
               <form
-                action="/campgrounds/<%= campground._id %>/reviews/<%= review._id %>?_method=DELETE"
+                action="/gyms/<%= gym._id %>/reviews/<%= review._id %>?_method=DELETE"
                 method="POST"
               >
                 <% if (currentUser && review.author.equals(currentUser._id)) {
@@ -128,7 +128,7 @@
       <% } %>
       <h4>Leave a Review</h4>
       <form
-        action="/campgrounds/<%= campground._id %>/reviews"
+        action="/gyms/<%= gym._id %>/reviews"
         method="POST"
         class="mb-3 validated-form"
         novalidate
@@ -205,7 +205,7 @@
 
 <script>
   const mapToken = "<%-process.env.MAPBOX_TOKEN%>";
-  const campground = <%- JSON.stringify(campground)%>;
+  const gym = <%- JSON.stringify(gym)%>;
 </script>
 
 <script src="/javascripts/showMap.js"></script>

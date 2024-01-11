@@ -1,41 +1,41 @@
 <% layout('layouts/boilerplate') %>
-
 <div class="container mt-5">
   <div class="row">
-    <h1 class="text-center">Edit Campground</h1>
+    <h1 class="text-center mb-3 mt-3">New Boulder Gym</h1>
     <div class="col-md-6 offset-md-3">
       <form
-        class="validated-form"
-        action="/campgrounds/<%=campground._id%>?_method=PUT"
+        action="/gyms"
         method="POST"
         novalidate
+        class="validated-form"
         enctype="multipart/form-data"
       >
         <div class="mb-3">
-          <label class="form-label" for="title">Title</label>
+          <label class="form-label" for="title">Name</label>
           <input
             class="form-control"
             type="text"
-            name="campground[title]"
+            name="gym[title]"
             id="title"
-            value="<%= campground.title %>"
             required
           />
+          <div class="valid-feedback">Looks good!</div>
         </div>
-
         <div class="mb-3">
-          <label class="form-label" for="location">Location</label>
+          <label class="form-label" for="location">City</label>
           <input
             class="form-control"
             type="text"
-            name="campground[location]"
+            name="gym[location]"
             id="location"
-            value="<%= campground.location %>"
             required
           />
+          <div class="valid-feedback">Looks good!</div>
         </div>
         <div class="mb-3">
-          <label for="formFileMultiple" class="form-label">Add Image(s)</label>
+          <label for="formFileMultiple" class="form-label"
+            >Upload Image(s)</label
+          >
           <input
             class="form-control"
             type="file"
@@ -54,11 +54,11 @@
               placeholder="0.00"
               aria-label="price"
               aria-describedby="price-label"
-              name="campground[price]"
+              name="gym[price]"
               id="price"
-              value="<%= campground.price %>"
               required
             />
+            <div class="valid-feedback">Looks good!</div>
           </div>
         </div>
 
@@ -67,34 +67,15 @@
           <textarea
             class="form-control"
             type="text"
-            name="campground[description]"
+            rows="4"
+            name="gym[description]"
             id="description"
             required
-          >
-<%= campground.description %></textarea
-          >
-        </div>
-        <div class="mb-3">
-          <div class="row g-1">
-            <% campground.images.forEach(function(img, i) { %>
-            <div class="col-3">
-              <img src="<%= img.thumbnail %>" alt="" class="img-thumbnail" />
-            </div>
-            <div class="col-1 form-check ml-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="image-<%= i %>"
-                name="deleteImages[]"
-                value="<%= img.filename %>"
-              />
-              <label for="image-<%= i %>">&#128465;</label>
-            </div>
-            <%}) %>
-          </div>
+          ></textarea>
+          <div class="valid-feedback">Looks good!</div>
         </div>
         <div class="mb-3 text-center">
-          <button class="btn btn-info">Update Campground</button>
+          <button class="btn btn-success">Add Boulder Gym</button>
         </div>
       </form>
     </div>

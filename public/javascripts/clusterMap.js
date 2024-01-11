@@ -4,12 +4,12 @@ const map = new mapboxgl.Map({
   container: "cluster-map",
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
   style: "mapbox://styles/mapbox/outdoors-v12",
-  center: campgrounds.features[0].geometry.coordinates,
+  center: gyms.features[0].geometry.coordinates,
 });
 
 const bounds = new mapboxgl.LngLatBounds();
 
-campgrounds.features.forEach(function (f) {
+gyms.features.forEach(function (f) {
   bounds.extend(f.geometry.coordinates);
 });
 
@@ -18,18 +18,18 @@ map.fitBounds(bounds, {
   maxZoom: 9,
 });
 
-if (campgrounds.features.length < 10) {
-  const { popUpMarkup } = campgrounds.features[0].properties;
+if (gyms.features.length < 10) {
+  const { popUpMarkup } = gyms.features[0].properties;
 
   map.fitBounds(bounds, {
     padding: { top: 40, bottom: 40 },
     maxZoom: 9,
     minZoom: 3,
-    center: campgrounds.features[0].geometry.coordinates,
+    center: gyms.features[0].geometry.coordinates,
   });
 
   const marker = new mapboxgl.Marker({ color: "#FF0000" })
-    .setLngLat(campgrounds.features[0].geometry.coordinates, { offset: 5 })
+    .setLngLat(gyms.features[0].geometry.coordinates, { offset: 5 })
     .setPopup(new mapboxgl.Popup().setHTML(popUpMarkup)) // add popup
     .addTo(map)
     .togglePopup();
@@ -41,11 +41,11 @@ map.on("load", () => {
   // set the 'cluster' option to true. GL-JS will
   // add the point_count property to your source data.
 
-  map.addSource("campgrounds", {
+  map.addSource("gyms", {
     type: "geojson",
-    // Point to GeoJSON data. This example visualizes all M1.0+ campgrounds
+    // Point to GeoJSON data. This example visualizes all M1.0+ gyms
     // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-    data: campgrounds,
+    data: gyms,
     cluster: true,
     clusterMaxZoom: 14, // Max zoom to cluster points on
     clusterRadius: 50, // Radius of each cluster when clustering points (defaults to 50)
@@ -54,7 +54,7 @@ map.on("load", () => {
   map.addLayer({
     id: "clusters",
     type: "circle",
-    source: "campgrounds",
+    source: "gyms",
     filter: ["has", "point_count"],
     paint: {
       // Use step expressions (https://docs.mapbox.com/style-spec/reference/expressions/#step)
@@ -78,7 +78,7 @@ map.on("load", () => {
   map.addLayer({
     id: "cluster-count",
     type: "symbol",
-    source: "campgrounds",
+    source: "gyms",
     filter: ["has", "point_count"],
     layout: {
       "text-field": ["get", "point_count_abbreviated"],
@@ -90,7 +90,7 @@ map.on("load", () => {
   map.addLayer({
     id: "unclustered-point",
     type: "circle",
-    source: "campgrounds",
+    source: "gyms",
     filter: ["!", ["has", "point_count"]],
     paint: {
       "circle-color": "#8FE000",
@@ -107,7 +107,7 @@ map.on("load", () => {
     });
     const clusterId = features[0].properties.cluster_id;
     map
-      .getSource("campgrounds")
+      .getSource("gyms")
       .getClusterExpansionZoom(clusterId, (err, zoom) => {
         if (err) return;
 

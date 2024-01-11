@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const mongoose = require("mongoose");
-const Campground = require("../models/campground");
+const Gym = require("../models/gym");
 const { images } = require("./images");
 const { seeds } = require("./seedHelpers");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
@@ -20,8 +20,8 @@ db.once("open", () => {
 });
 
 const seedDB = async () => {
-  // await Campground.deleteMany({});
-  for (let i = 0; i < 99; i++) {
+  // await Gym.deleteMany({});
+  for (let i = 0; i < 77; i++) {
     // const random1000 = Math.floor(Math.random() * 1000);
     // const price = Math.floor(Math.random() * 20) + 10;
     const geoData = await geocoder
@@ -30,7 +30,7 @@ const seedDB = async () => {
         limit: 1,
       })
       .send();
-    const camp = new Campground({
+    const gym = new Gym({
       author: "6537e69145fba74eca488893",
       location: geoData.body.features[0].place_name,
       title: seeds[i].title,
@@ -40,14 +40,16 @@ const seedDB = async () => {
         type: "Point",
         coordinates: geoData.body.features[0].geometry.coordinates,
       },
-      images: [images[i % 16]],
+      images: [images[i % 18]],
     });
-  // const campgrounds = await Campground.find({});
+    await gym.save();
+    // const gyms = await Gym.find({});
 
-  // for (let i = 0; i < campgrounds.length; i++) {
-  //   campgrounds[i].images.push(images[i % 9]);
-  //   await campgrounds[i].save();
-  // }
+    // for (let i = 0; i < gyms.length; i++) {
+    //   gyms[i].images.push(images[i % 9]);
+    //   await gyms[i].save();
+    // }
+  }
 };
 seedDB().then(() => {
   mongoose.connection.close();

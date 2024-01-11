@@ -1,551 +1,536 @@
 module.exports.seeds = [
   {
-    title: "Alpine Bliss Retreat",
+    title: "Be Boulder Amsterdam",
     description:
-      "Find solace in the Swiss Alps near Interlaken, where our campsite is surrounded by snow-capped peaks, alpine meadows, and the crisp mountain air.",
-    location: "Interlaken",
+      "Climb to new heights near the iconic Anthony Fokkerweg in Amsterdam, where the vibrant city life meets the challenge of bouldering.",
+    location: "Anthony Fokkerweg 75, 1059 CP Amsterdam",
     price: 15,
   },
   {
-    title: "Venetian Waterside Haven",
+    title: "Beta Boulders Amsterdam",
     description:
-      "Experience the magic of Venice at our waterside campsite, where the gentle lapping of canals and the romantic ambiance create a unique and unforgettable escape.",
-    location: "Venice",
+      "Located at Stadionplein, this urban bouldering destination promises an exhilarating experience against a captivating cityscape.",
+    location: "Stadionplein 18, 1076 CM Amsterdam",
     price: 20,
   },
   {
-    title: "Baltic Breeze Campground",
-    description:
-      "Set up camp along the shores of the Baltic Sea in Riga, where the bracing sea breeze mingles with the scent of pine forests, offering a refreshing coastal getaway.",
-    location: "Riga",
+    title: "Monk Bouldergym Amsterdam",
+    description: "Scale new heights at Monk Bouldergym Amsterdam.",
+    location: "Aambeeldstraat 26, 1021 KB Amsterdam",
     price: 12,
   },
   {
-    title: "Aurora Glade Campsite",
+    title: "Klimhal Mountain Network Amsterdam",
     description:
-      "Immerse yourself in the ethereal dance of the Northern Lights near Tromsø, where the Arctic sky transforms into a canvas of vibrant colors, casting a spell over the tranquil landscape.",
-    location: "Tromsø",
+      "Embark on a climbing journey at Klimhal Mountain Network Amsterdam, situated at Erasmusgracht. This climbing hub combines the thrill of ascents with the allure of Amsterdam, providing climbers with a unique experience against the backdrop of the city's historic charm and tranquility.",
+    location: "Erasmusgracht 297, 1061 MD Amsterdam",
     price: 18,
   },
   {
-    title: "Andalusian Sunset Retreat",
+    title: "Club Monk",
     description:
-      "Savor the warmth of an Andalusian sunset at our campsite near Granada, where the rugged Sierra Nevada provides a dramatic backdrop to your evening campfire tales.",
-    location: "Granada",
+      "Unleash your climbing spirit at Club Monk, nestled at H.J.E. Wenckebachweg in Amsterdam.",
+    location: "H.J.E. Wenckebachweg 79, 1096 AL Amsterdam",
     price: 22,
   },
   {
-    title: "Prague Castle Pines",
+    title: "Klimmuur Amsterdam Centraal",
     description:
-      "Camp in the shadow of Prague Castle, where ancient pines stand as silent guardians, and the historic charm of the city permeates the air, creating a unique fusion of nature and culture.",
-    location: "Prague",
+      "This climbing facility offers a unique urban ascent experience, with the historic charm of the city as your backdrop, creating an exhilarating atmosphere for climbers in the heart of Amsterdam.",
+    location: "Dijksgracht 2, 1019 BS Amsterdam",
     price: 16,
   },
   {
-    title: "Barcelona Beachside Serenity",
+    title: "Boulderhal de Fabriek",
     description:
-      "Pitch your tent along the Barcelona coastline, where the Mediterranean whispers tales of ancient civilizations, and the beachside breeze invites you to relax and rejuvenate.",
-    location: "Barcelona",
+      " Dive into the world of bouldering excellence at Boulderhal de Fabriek, located on Ben Viljoenstraat in Haarlem.",
+    location: "Ben Viljoenstraat 1, 2021 AA Haarlem",
     price: 25,
   },
   {
-    title: "Dublin Bay Campfire Cove",
+    title: "Klimmuur Haarlem",
     description:
-      "Bask in the warmth of a campfire overlooking Dublin Bay, where the sea breeze carries the lively spirit of the city, and the waves provide a soothing lullaby for a restful night.",
-    location: "Dublin",
+      "Every climb at Klimmuur Haarlem is a journey into the heart of bouldering excitement, away from the hustle and bustle.",
+    location: "Spaarndamseweg 120-B, 2021 KA Haarlem",
     price: 19,
   },
   {
-    title: "Roman Forum Reflections",
+    title: "Boulderwand Boulder Buiten Klimmen",
     description:
-      "Camp near the ancient ruins of the Roman Forum, where history comes alive under the starlit Roman sky, inviting you to reflect on the passage of time and the beauty of the eternal city.",
-    location: "Rome",
+      "Immerse yourself in the world of outdoor bouldering at Boulderwand Boulder Buiten Klimmen, found at Bijlmerplein in Amsterdam.",
+    location: "Bijlmerplein 138, 1102 MG Amsterdam",
     price: 13,
   },
   {
-    title: "Swedish Archipelago Escape",
+    title: "Boulderhal de Fabriek - Hoofddorp",
     description:
-      "Navigate the picturesque Swedish Archipelago to our secluded campsite, where granite cliffs, tranquil waters, and the scent of pine create an idyllic Nordic escape.",
-    location: "Stockholm",
+      "Immerse yourself in the thrill of vertical adventures at Boulderhal de Fabriek in Hoofddorp.",
+    location: "Graftermeerstraat 40, 2131 AC Hoofddorp",
     price: 17,
   },
   {
-    title: "Porto Vineyard Vista",
+    title: "Boulderhal Het Lab",
     description:
-      "Sip the beauty of Porto at our campsite overlooking vineyards, where the terraced hillsides and the Douro River set the stage for a tranquil and wine-infused camping experience.",
-    location: "Porto",
+      "Step into the experimental realm of climbing at Boulderhal Het Lab, situated on Transformatorweg in Amsterdam. This dynamic bouldering space invites adventurers to push boundaries and scale new heights.",
+    location: "Transformatorweg 32, 1014 AK Amsterdam",
     price: 21,
   },
   {
-    title: "Bavarian Forest Haven",
+    title: "Bouldergym BAZ",
     description:
-      "Immerse yourself in the enchanting Bavarian Forest near Munich, where ancient woodlands, charming villages, and the spirit of folklore come together in a harmonious camping haven.",
-    location: "Munich",
+      "This bouldering gym is a haven for enthusiasts seeking a thrilling and challenging experience.",
+    location: "Oostzijde 381, 1508 EP Zaandam",
     price: 11,
   },
   {
-    title: "Oslo Fjord Serenade",
+    title: "Monk Bouldergym Rotterdam",
     description:
-      "Camp along the Oslo Fjord, where the tranquil waters and surrounding hills create a serene and harmonious setting, perfect for a relaxing getaway.",
-    location: "Oslo",
+      "Embark on a climbing journey at Monk Bouldergym Rotterdam, situated in the heart of the city. This bouldering gym offers a dynamic space where urban energy meets vertical exploration.",
+    location: "Ceintuurbaan 183, 3051 KC Rotterdam",
     price: 16,
   },
-  // ... (Previous 10 entries)
-
   {
-    title: "Catalan Countryside Retreat",
+    title: "Bolder Neoliet",
     description:
-      "Experience the tranquility of the Catalan countryside near Girona, where vineyards, olive groves, and rolling hills create a picturesque camping retreat.",
-    location: "Girona",
+      "Ascend to new heights at Bolder Neoliet in Rotterdam, located at Keilestraat 7J. This bouldering haven offers dynamic climbs in an urban setting, providing a thrilling experience for climbers of all levels.",
+    location: "Keilestraat 7J, 3029 BP Rotterdam",
     price: 15,
   },
   {
-    title: "Dutch Windmill Meadow",
+    title: "Beest Boulders Rotterdam",
     description:
-      "Camp in the shadows of traditional Dutch windmills in the picturesque meadows near Utrecht, where the gentle whir of blades accompanies your serene outdoor stay.",
-    location: "Utrecht",
+      "Unleash your inner beast at Beest Boulders Rotterdam, situated at Benthemplein 10. This bouldering facility blends challenging ascents with a vibrant atmosphere, creating an energetic space for climbers in the heart of Rotterdam.",
+    location: "Benthemplein 10, 3032 CC Rotterdam",
     price: 18,
   },
   {
-    title: "Transylvanian Castle Camp",
+    title: "De Klimmuur Rotterdam",
     description:
-      "Pitch your tent near a Transylvanian castle, where the mysterious allure of medieval architecture and the surrounding Carpathian Mountains set the stage for an unforgettable camping experience.",
-    location: "Brasov",
+      "Scale the heights of excitement at De Klimmuur Rotterdam, found at Prinsenlaan 910. Offering diverse climbing challenges, this gym is a perfect fusion of urban convenience and climbing thrill in Rotterdam.",
+    location: "Prinsenlaan 910, 3062 CT Rotterdam",
     price: 22,
   },
   {
-    title: "Icelandic Glacier Camp",
+    title: "Boulderhal Energiehaven",
     description:
-      "Immerse yourself in the beauty of an Icelandic glacier campsite near Reykjavik, where the icy landscapes and northern lights offer a surreal and captivating experience.",
-    location: "Reykjavik",
+      "Energize your climbing journey at Boulderhal Energiehaven in Utrecht, located at Elektronweg 10A. This bouldering hub provides an electrifying experience with varied climbs and a welcoming community.",
+    location: "Elektronweg 10A, 3542 AC Utrecht",
     price: 25,
   },
   {
-    title: "Algarve Cliffside Retreat",
+    title: "Boulderhal Sterk",
     description:
-      "Escape to a cliffside retreat along the Algarve coast near Faro, where golden beaches and dramatic cliffs create a serene and captivating camping experience.",
-    location: "Faro",
+      "Discover strength and resilience at Boulderhal Sterk in Utrecht, situated at Kon. Wilhelminalaan 4b. This bouldering destination combines powerful climbs with a supportive environment, offering a well-rounded experience for climbers of all levels.",
+    location: "Kon. Wilhelminalaan 4b, 3527 LD Utrecht",
     price: 18,
   },
-  // ... (Previous 10 entries)
-
   {
-    title: "Portuguese Coastal Cliff Camp",
+    title: "Boulderhal Zuidhaven",
     description:
-      "Set up camp on a coastal cliff in Porto, where the Atlantic Ocean stretches to the horizon, and the rugged coastline provides a dramatic backdrop for your camping adventure.",
-    location: "Porto",
+      "Embark on an urban climbing adventure at Boulderhal Zuidhaven in Utrecht. Located at Vrieslantlaan 2, this bouldering destination offers dynamic ascents in an exciting city landscape, catering to climbers of all levels.",
+    location: "Vrieslantlaan 2, 3526 AA Utrecht",
     price: 19,
   },
   {
-    title: "Adriatic Olive Grove Oasis",
+    title: "Le Camp de Base",
     description:
-      "Discover an oasis among Adriatic olive groves near Split, where the scent of olives and the sea breeze create a peaceful and rejuvenating atmosphere.",
-    location: "Split",
+      "Experience climbing serenity at Le Camp de Base in Ixelles, Belgium. Nestled at Chau. de Boondael 210C, this bouldering haven combines challenging climbs with a tranquil atmosphere, providing an ideal escape for climbers.",
+    location: "Chau. de Boondael 210C, 1050 Ixelles, Belgium",
     price: 20,
   },
   {
-    title: "Provencal Lavender Fields",
+    title: "Terres Neuves",
     description:
-      "Camp in the heart of Provencal lavender fields near Avignon, where the fragrant blooms and vibrant landscapes create a sensory-rich camping escape.",
-    location: "Avignon",
+      "Explore bouldering excellence at Terres Neuves in Bruxelles, Belgium. Located at Rue Terre-Neuve 28, this bouldering hub offers diverse climbs in the heart of Brussels.",
+    location: "Rue Terre-Neuve 28, 1000 Bruxelles, Belgium",
     price: 18,
   },
   {
-    title: "Scottish Lochside Camp",
+    title: "Arkose Canal",
     description:
-      "Camp by the shores of a Scottish loch near Inverness, where mist-covered waters and the distant sounds of bagpipes create a truly enchanting camping experience.",
-    location: "Inverness",
+      "Immerse yourself in climbing at Arkose Canal in Bruxelles, Belgium. Positioned at All. Verte 52, this bouldering facility provides a varied climbing experience in an urban setting.",
+    location: "All. Verte 52, 1000 Bruxelles, Belgium",
     price: 12,
   },
   {
-    title: "Sicilian Citrus Grove Getaway",
+    title: "Block'Out Paris Saint Ouen",
     description:
-      "Immerse yourself in the aroma of citrus groves in Sicily, where the Mediterranean breeze carries scents of oranges and lemons for a refreshing camping getaway.",
-    location: "Palermo",
+      "Conquer new heights at Block'Out Paris Saint Ouen, France. Situated at 50 Rue Ardoin, this bouldering spot offers thrilling climbs against the backdrop of Saint-Ouen-sur-Seine.",
+    location: "50 Rue Ardoin, 93400 Saint-Ouen-sur-Seine, France",
     price: 23,
   },
   {
-    title: "Bergen Fjord Retreat",
+    title: "Climbing District",
     description:
-      "Camp by the serene fjords of Bergen, where majestic cliffs, tranquil waters, and the charm of the Norwegian countryside create a peaceful and unforgettable retreat.",
-    location: "Bergen",
+      "Embark on a climbing journey at Climbing District in Paris, France. Found at 55 Rue de Meaux, this bouldering destination blends urban vibes with diverse climbs for a captivating experience.",
+    location: "55 Rue de Meaux, 75019 Paris, France",
     price: 17,
   },
   {
-    title: "Corsican Mountain Vista",
+    title: "Le 8 Assure",
     description:
-      "Camp among the Corsican mountains near Ajaccio, where towering peaks, alpine meadows, and the fresh mountain air create an invigorating and breathtaking outdoor experience.",
-    location: "Ajaccio",
+      "Unleash your climbing prowess at Le 8 Assure in Paris, France. Located at 28 Rue Laure Diebold, this bouldering spot offers powerful ascents in the heart of Parisian climbing culture.",
+    location: "28 Rue Laure Diebold, 75008 Paris, France",
     price: 19,
   },
   {
-    title: "Swiss Chalet Meadows",
+    title: "Boulders Newport Road",
     description:
-      "Experience the charm of Swiss chalet living in the meadows of Lucerne, where alpine flowers and pristine landscapes offer a picturesque camping experience.",
-    location: "Lucerne",
+      "Climb to new heights at Boulders Newport Road in Cardiff, United Kingdom. Located at St Catherines Pk, Pengam Rd, this bouldering destination offers dynamic ascents in an engaging urban environment.",
+    location:
+      "East, Boulders, St Catherines Pk, Pengam Rd, Cardiff CF24 2RZ, United Kingdom",
     price: 20,
   },
   {
-    title: "Santorini Cliffside Vista",
+    title: "Flashpoint Cardiff",
     description:
-      "Enjoy a cliffside camping experience in Santorini, where the panoramic views of the Aegean Sea and the iconic white-washed buildings create a dreamlike atmosphere.",
-    location: "Santorini",
+      "Ignite your passion for climbing at Flashpoint Cardiff, situated at Freemans Parc, 236 Penarth Rd. This bouldering center provides an affordable and thrilling climbing experience in the heart of Cardiff.",
+    location: "Freemans Parc, 236 Penarth Rd, Cardiff CF11 8EQ, United Kingdom",
     price: 10,
   },
   {
-    title: "Bucharest Urban Oasis",
+    title: "Boulders Culverhouse Cross",
     description:
-      "Camp in the heart of Bucharest, where urban vibes meet natural serenity, offering a unique blend of city life and outdoor tranquility.",
-    location: "Bucharest",
+      "Discover bouldering excellence at Boulders Culverhouse Cross in Cardiff, United Kingdom. Nestled at Valegate Retail Park, Culverhouse Cross, this climbing spot offers challenging ascents in a vibrant setting.",
+    location:
+      "Valegate Retail Park, Culverhouse Cross, Cardiff CF5 6EH, United Kingdom",
     price: 18,
   },
-  // ... (Previous 10 entries)
-
   {
-    title: "Belgrade Riverside Retreat",
+    title: "The Climbing Hangar London",
     description:
-      "Set up camp along the Danube River in Belgrade, where the city's vibrant energy meets the tranquil flow of the river for a unique and rejuvenating camping experience.",
-    location: "Belgrade",
+      "Hang onto adventure at The Climbing Hangar London, located at Parson Green Depot, 33-35 Parsons Green Ln. This bouldering center in London offers a diverse range of climbs against the backdrop of the city's energy.",
+    location:
+      "5, Parson Green Depot, 33-35 Parsons Green Ln, London SW6 4HH, United Kingdom",
     price: 23,
   },
   {
-    title: "Cinque Terre Coastal Haven",
+    title: "VauxWall East Climbing Centre",
     description:
-      "Camp along the picturesque Cinque Terre coastline, where colorful villages cling to cliffs, and the Ligurian Sea provides a stunning backdrop for your outdoor retreat.",
-    location: "Cinque Terre",
+      "Scale new heights at VauxWall East Climbing Centre, situated at 1 Cabanel Pl. This bouldering facility in London SE11 6BD provides an accessible and affordable climbing experience for enthusiasts.",
+    location: "1 Cabanel Pl, London SE11 6BD, United Kingdom",
     price: 8,
   },
   {
-    title: "Edinburgh Castle Viewpoint",
+    title: "The Castle Climbing Centre",
     description:
-      "Pitch your tent with a view of Edinburgh Castle, where the historic fortress stands as a silent witness to the city's rich history and offers a majestic backdrop to your camping adventure.",
-    location: "Edinburgh",
+      "Conquer the castle at The Castle Climbing Centre in London. Located at Green Lanes, this renowned climbing destination offers a historic and challenging experience for climbers of all levels.",
+    location: "Green Lanes, London N4 2HA, United Kingdom",
     price: 17,
   },
   {
-    title: "Azores Volcanic Wonderland",
+    title: "VauxWall West Climbing Centre",
     description:
-      "Immerse yourself in the natural wonders of the Azores, where volcanic landscapes, lush greenery, and the Atlantic Ocean create a truly magical camping retreat.",
-    location: "Ponta Delgada",
+      "Embark on a climbing adventure at VauxWall West Climbing Centre, situated at Arch 45b, 47a S Lambeth Rd. This bouldering spot in London SW8 1SR offers diverse climbs against the urban backdrop.",
+    location: "Arch 45b, 47a S Lambeth Rd, London SW8 1SR, United Kingdom",
     price: 12,
   },
   {
-    title: "Baltic Amber Coast",
+    title: "Mile End Climbing Wall",
     description:
-      "Camp along the Baltic Amber Coast in Lithuania, where golden beaches, amber-laden shores, and the tranquility of the Baltic Sea provide a unique and peaceful camping escape.",
-    location: "Klaipeda",
+      "Challenge yourself at Mile End Climbing Wall in London, located at GXH6+33. This bouldering facility offers a varied and exciting climbing experience against the city's skyline.",
+    location: "GXH6+33 London, United Kingdom",
     price: 18,
   },
   {
-    title: "Alentejo Vineyard Serenity",
+    title: "Aldgate City Bouldering",
     description:
-      "Escape to a vineyard oasis in Alentejo, Portugal, where rolling vine-covered hills, historic estates, and the aroma of wine create a serene and enchanting camping experience.",
-    location: "Evora",
+      "Ascend the heights at Aldgate City Bouldering in London, located at 33 Aldgate High St. This bouldering center offers an urban climbing experience amidst the city's vibrant atmosphere.",
+    location: "33 Aldgate High St, London EC3N 1AL, United Kingdom",
     price: 20,
   },
   {
-    title: "Moldovan Wine Country",
+    title: "EustonWall Climbing Centre",
     description:
-      "Set up camp in the picturesque Moldovan wine country, where vineyards stretch as far as the eye can see, and the aroma of wine permeates the air for a delightful camping retreat.",
-    location: "Chisinau",
+      "Climb with flair at EustonWall Climbing Centre in London, located at 350 Euston Rd. This bouldering destination offers a unique climbing experience near Euston Station.",
+    location: "350 Euston Rd., London NW1 3AX, United Kingdom",
     price: 14,
   },
-  // ... (Previous 10 entries)
-
   {
-    title: "Tuscan Olive Grove Retreat",
+    title: "Sharma Climbing Barcelona",
     description:
-      "Camp in the heart of Tuscany, surrounded by olive groves and rolling hills, where the aroma of olives and the warmth of the Italian sun create a peaceful retreat.",
-    location: "Florence",
+      "Experience climbing excellence at Sharma Climbing in Barcelona, located at C. del Marroc, 204, Sant Martí, 08019. This climbing haven offers a dynamic and challenging environment, perfect for climbers of all levels.",
+    location: "C. del Marroc, 204, Sant Martí, 08019 Barcelona, Spain",
     price: 18,
   },
   {
-    title: "Viennese Danube Delta",
+    title: "Bloc District Barcelona",
     description:
-      "Experience the beauty of the Danube Delta in Vienna, where the river winds through picturesque landscapes, offering a tranquil escape within the city limits.",
-    location: "Vienna",
+      "Discover the heart of climbing at Bloc District in Barcelona, situated at Carrer de Zamora, 96-106, Sant Martí, 08018. This bouldering spot offers diverse climbs against the backdrop of Barcelona's vibrant energy.",
+    location: "Carrer de Zamora, 96-106, Sant Martí, 08018 Barcelona, Spain",
     price: 12,
   },
   {
-    title: "Lakeside Serenity",
+    title: "Climbat La Foixarda",
     description:
-      "Set up camp by a serene Prussian lakeside near Berlin, where the crystal-clear waters and the surrounding forest provide a peaceful and rejuvenating atmosphere.",
-    location: "Berlin",
+      "Climbat La Foixarda in Barcelona, located at Carrer de la Foixarda, 14, 18, Sants-Montjuïc, 08038, promises an exhilarating climbing experience. With a variety of climbs, it's an ideal destination for climbers seeking challenges.",
+    location:
+      "Carrer de la Foixarda, 14, 18, Sants-Montjuïc, 08038 Barcelona, Spain",
     price: 18,
   },
   {
-    title: "Athens Acropolis Viewpoint",
+    title: "Monobloc La Sagrera",
     description:
-      "Camp in the shadows of the Acropolis in Athens, where ancient history meets modern-day tranquility, offering a unique blend of cultural and natural wonders.",
-    location: "Athens",
+      "Embrace climbing at Monobloc La Sagrera in Barcelona, situated at Carrer d'Olesa, 71, Sant Andreu, 08027. This bouldering center offers a welcoming environment and diverse climbs for climbers of all skill levels.",
+    location: "Carrer d'Olesa, 71, Sant Andreu, 08027 Barcelona, Spain",
     price: 11,
   },
   {
-    title: "Amalfi Coast Clifftop Haven",
+    title: "Indoorwall El Clot",
     description:
-      "Pitch your tent on a clifftop along the Amalfi Coast, where the turquoise waters below and the dramatic coastline create a breathtaking and unforgettable setting.",
-    location: "Amalfi",
+      "Conquer the heights at Indoorwall El Clot in Barcelona, located at Carrer de Gabriel y Galán, 3, Sant Martí, 08026. This bouldering facility provides a diverse climbing experience in a dynamic and supportive setting.",
+    location:
+      "Carrer de Gabriel y Galán, 3, Sant Martí, 08026 Barcelona, Spain",
     price: 15,
   },
   {
-    title: "Budapest Thermal Springs Retreat",
+    title: "Berta Block",
     description:
-      "Relax in the thermal springs of Budapest at our campsite, where the healing waters and scenic surroundings provide a perfect balance of wellness and nature.",
-    location: "Budapest",
+      "Conquer the walls at Berta Block in Berlin, located at Mühlenstraße 62, 13189. This bouldering spot offers an affordable and diverse climbing experience in the heart of Germany's capital.",
+    location: "Mühlenstraße 62, 13189 Berlin, Germany",
     price: 10,
   },
   {
-    title: "Dubrovnik Cliffside Haven",
+    title: "Magic Mountain",
     description:
-      "Set up camp on a cliff overlooking the Adriatic Sea in Dubrovnik, where the ancient city walls and crystal-clear waters provide a stunning backdrop for your outdoor retreat.",
-    location: "Dubrovnik",
+      "Embark on a magical climbing journey at Magic Mountain in Berlin, situated at Böttgerstraße 20, 13357. This bouldering haven provides thrilling climbs against the backdrop of Berlin's vibrant energy.",
+    location: "Böttgerstraße 20, 13357 Berlin, Germany",
     price: 10,
   },
   {
-    title: "Montenegrin Mountain Serenity",
+    title: "Boulderklub Kreuzberg",
     description:
-      "Find serenity in the Montenegrin mountains near Kotor, where rugged peaks, clear lakes, and historic charm provide a perfect setting for a peaceful camping retreat.",
-    location: "Kotor",
+      "Experience bouldering excellence at Boulderklub Kreuzberg in Berlin, located at Ohlauer Str. 38, 10999. This climbing hub offers diverse climbs and a welcoming environment for climbers of all levels.",
+    location: "Ohlauer Str. 38, 10999 Berlin, Germany",
     price: 16,
   },
   {
-    title: "Normandy Beachside Serenity",
+    title: "Der Kegel Kletterturm",
     description:
-      "Set up camp on the shores of Normandy, where sandy beaches stretch for miles, and the soothing sound of waves provides a serene backdrop for your camping getaway.",
-    location: "Normandy",
+      "Climb to new heights at Der Kegel Kletterturm in Berlin, situated at Revaler Str. 99, 10245. This bouldering facility offers a challenging and dynamic climbing experience in the heart of Germany's capital.",
+    location: "Revaler Str. 99, 10245 Berlin, Germany",
     price: 15,
   },
   {
-    title: "Tallinn Old Town Oasis",
+    title: "Urban Apes Basement",
     description:
-      "Camp in the heart of Tallinn's Old Town, where medieval charm meets modern comfort, offering a distinctive and enchanting camping experience in the Estonian capital.",
-    location: "Tallinn",
+      "Explore the urban jungle at Urban Apes Basement in Berlin, located at Stresemannstraße 72, 10963. This bouldering spot offers an engaging climbing experience amidst the city's dynamic atmosphere.",
+    location: "Stresemannstraße 72, 10963 Berlin, Germany",
     price: 12,
   },
   {
-    title: "Ibiza Beach Bliss",
+    title: "Vertigo Climbing Wall",
     description:
-      "Experience beach bliss on the island of Ibiza, where sandy shores, crystal-clear waters, and the vibrant nightlife offer a unique and energetic camping experience.",
-    location: "Ibiza",
+      "Reach new heights at Vertigo Climbing Wall in Lisbon, Portugal. Located at Edifício Beira Rio, Av. Infante Dom Henrique Fração S, 1950-408, this climbing destination offers an exhilarating experience against the scenic backdrop of Lisbon.",
+    location:
+      "Edifício Beira Rio, Av. Infante Dom Henrique Fração S, 1950-408 Lisboa, Portugal",
     price: 23,
   },
   {
-    title: "Baltic Sea Breeze Retreat",
+    title: "Climb UP",
     description:
-      "Experience the refreshing Baltic Sea breeze at our campsite in Tallinn, where coastal charm, sandy beaches, and a tranquil atmosphere create an idyllic camping escape.",
-    location: "Tallinn",
+      "Ascend to greatness at Climb UP in Carnaxide, Portugal. Situated at R. de Nossa Sra. da Conceição nº3 armazém L, 2790-111, this bouldering facility provides a diverse and challenging climbing experience.",
+    location:
+      "R. de Nossa Sra. da Conceição nº3 armazém L, 2790-111 Carnaxide, Portugal",
     price: 18,
   },
   {
-    title: "Amsterdam Canalside Serenity",
+    title: "Escala25",
     description:
-      "Camp along the historic canals of Amsterdam, where picturesque bridges, cozy houseboats, and the vibrant city life provide a unique and peaceful setting for your outdoor retreat.",
-    location: "Amsterdam",
+      "Experience climbing at its best at Escala25 in Lisbon, Portugal. Located at Avenida da Índia, Pte. 25 de Abril 52 Pilar 7, 1300-299, this climbing spot offers a thrilling and scenic climbing experience.",
+    location:
+      "Avenida da Índia, Pte. 25 de Abril 52 Pilar 7, 1300-299 Lisboa, Portugal",
     price: 22,
   },
   {
-    title: "Alps Alpine Meadow Hideout",
+    title: "Lokal Blok Bouldering",
     description:
-      "Pitch your tent in an Alpine meadow near Zurich, where wildflowers, majestic peaks, and the crisp mountain air offer a serene and invigorating camping experience.",
-    location: "Zurich",
+      "Unleash your climbing skills at Lokal Blok Bouldering in Prague, Czechia. Found at nám. 14. října 2173/10, 150 00 Praha 5-Smíchov, this bouldering destination offers diverse climbs in a vibrant setting.",
+    location: "nám. 14. října 2173/10, 150 00 Praha 5-Smíchov, Czechia",
     price: 20,
   },
   {
-    title: "Sardinian Emerald Cove",
+    title: "Climbing Center SmíchOff",
     description:
-      "Discover the beauty of an emerald cove in Sardinia, where pristine beaches, clear waters, and rugged landscapes create a captivating camping haven.",
-    location: "Cagliari",
+      "Climbing awaits at Climbing Center SmíchOff in Prague, Czechia. Located at Křížová 6, 150 00 Praha 5-Smíchov, this bouldering facility offers challenging climbs and a dynamic environment for climbers.",
+    location: "Křížová 6, 150 00 Praha 5-Smíchov, Czechia",
     price: 24,
   },
-  // ... (Previous 10 entries)
-
   {
-    title: "Copenhagen Harbor Hideaway",
+    title: "UltraAnt Climbing Club",
     description:
-      "Discover a hidden gem along the Copenhagen harbor, where city lights reflect on calm waters, and the vibrant atmosphere of the Danish capital meets the tranquility of a secluded camping retreat.",
-    location: "Copenhagen",
+      "Join the climbing community at UltraAnt Climbing Club in Prague, Czechia. Situated at Týnská 17, 101 00 Staré Město, this bouldering destination provides diverse climbs and a welcoming atmosphere.",
+    location: "Týnská 17, 101 00 Staré Město, Czechia",
     price: 20,
   },
   {
-    title: "Slovakian Carpathian Escape",
+    title: "Block Dock",
     description:
-      "Camp in the heart of the Slovakian Carpathians, where dense forests, pristine meadows, and the rugged beauty of the mountains create an immersive and rejuvenating outdoor experience.",
-    location: "Bratislava",
+      "Dock into climbing excitement at Block Dock in Bratislava, Slovakia. Located at Púchovská 14, 831 06, this bouldering spot offers varied climbs and an engaging atmosphere for climbers of all levels.",
+    location: "Púchovská 14, 831 06 Bratislava, Slovakia",
     price: 18,
   },
   {
-    title: "Ljubljana Riverside Retreat",
+    title: "Lezecká Stena K2",
     description:
-      "Experience the charm of Ljubljana by camping along the riverbanks, where the historic architecture, lush greenery, and the peaceful flow of the Ljubljanica River create a unique camping haven.",
-    location: "Ljubljana",
+      "Reach new heights at Lezecká Stena K2 in Bratislava, Slovakia. Situated at Stará Ivanská cesta 1B, 821 04, this climbing destination offers a challenging and dynamic environment for climbers of all levels.",
+    location: "Stará Ivanská cesta 1B, 821 04 Bratislava, Slovakia",
     price: 22,
   },
   {
-    title: "Marseille Calanques Cove",
+    title: "Climbing Center Vertigo",
     description:
-      "Pitch your tent in a hidden cove among the Calanques near Marseille, where turquoise waters, limestone cliffs, and the Mediterranean sun create a secluded and breathtaking camping retreat.",
-    location: "Marseille",
+      "Experience the thrill of climbing at Climbing Center Vertigo in Ružinov, Slovakia. Located at 47, Trenčianska 453, 821 09, this bouldering facility provides diverse climbs and a dynamic atmosphere for climbing enthusiasts.",
+    location: "47, Trenčianska 453, 821 09 Ružinov, Slovakia",
     price: 25,
   },
   {
-    title: "Bosnian Riverbank Escape",
+    title: "Beta Boulders Copenhagen",
     description:
-      "Find serenity along the riverbanks of Bosnia, where the gentle flow of rivers, lush landscapes, and the sounds of nature create an idyllic camping escape away from the hustle and bustle.",
-    location: "Sarajevo",
+      "Embark on a bouldering adventure at Beta Boulders in Copenhagen, Denmark. Situated at Pladehals Allé 26, st, 2450, this climbing spot offers varied climbs and a welcoming atmosphere for climbers of all levels.",
+    location: "Pladehals Allé 26, st, 2450 København, Denmark",
     price: 19,
   },
   {
-    title: "Arctic Circle Aurora Camp",
+    title: "Copenhagen Boulders",
     description:
-      "Immerse yourself in the magic of the Arctic Circle, where the Northern Lights dance across the sky, and the snowy landscapes provide a tranquil backdrop for your camping adventure.",
-    location: "Rovaniemi",
+      "Discover the joy of climbing at Copenhagen Boulders in Denmark. Located at Bådehavnsgade 38, port 1, 2450, this bouldering center offers diverse climbs in a vibrant and engaging setting.",
+    location: "Bådehavnsgade 38, port 1, 2450 København, Denmark",
     price: 14,
   },
   {
-    title: "Krakow Castle View Retreat",
+    title: "Blocs & Walls",
     description:
-      "Camp with a view of Wawel Castle in Krakow, where history and nature converge, offering a unique blend of medieval charm and outdoor tranquility.",
-    location: "Krakow",
+      "Immerse yourself in the world of bouldering at Blocs & Walls in Copenhagen, Denmark. Found at Refshalevej 163D, 1432 København K, this climbing destination provides varied climbs and a supportive environment.",
+    location: "Denmark, Refshalevej 163D, 1432 København K, Denmark",
     price: 16,
   },
   {
-    title: "Czech Bohemian Forest Hideout",
+    title: "Boulders Valby",
     description:
-      "Immerse yourself in the Bohemian Forest near Cesky Krumlov, where ancient woodlands, meandering rivers, and charming villages offer a peaceful and secluded camping haven.",
-    location: "Cesky Krumlov",
+      "Unleash your climbing passion at Boulders Valby in Copenhagen, Denmark. Located at Vigerslev Allé 47, 2500, this bouldering spot offers diverse climbs and a welcoming community for climbers.",
+    location: "Vigerslev Allé 47, 2500 København, Denmark",
     price: 19,
   },
   {
-    title: "Luxembourg Ardennes Escape",
+    title: "Nørrebro Klatreklub",
     description:
-      "Escape to the Luxembourg Ardennes, where dense forests, rolling hills, and medieval castles provide a serene backdrop for your camping adventure.",
-    location: "Luxembourg City",
+      "Climb with flair at Nørrebro Klatreklub in Copenhagen, Denmark. Situated at Bragesgade 5, 2200, this bouldering center offers varied climbs and a vibrant atmosphere for climbers of all levels.",
+    location: "Bragesgade 5, 2200 København, Denmark",
     price: 18,
   },
   {
-    title: "Helsinki Archipelago Haven",
+    title: "Bouldering",
     description:
-      "Discover the beauty of the Helsinki Archipelago, where a myriad of islands, rocky shores, and peaceful waters offer a unique and serene camping haven.",
-    location: "Helsinki",
+      "Embark on a bouldering adventure at Bouldering in Johanneshov, Sweden. Located at Slakthusgatan 26, 121 62, this climbing spot offers an affordable and diverse climbing experience for enthusiasts.",
+    location: "Slakthusgatan 26, 121 62 Johanneshov, Sweden",
     price: 15,
   },
   {
-    title: "Bulgarian Rose Valley Retreat",
+    title: "Klättercentret Gallerian",
     description:
-      "Camp in the heart of the Bulgarian Rose Valley near Plovdiv, where fragrant roses, picturesque landscapes, and the rich cultural heritage provide a unique camping experience.",
-    location: "Plovdiv",
+      "Climb amidst the urban charm at Klättercentret Gallerian in Stockholm, Sweden. Situated in Gallerian Mall, Hamngatan 37, 111 53, this climbing center offers varied climbs and a dynamic atmosphere for climbers.",
+    location: "Gallerian Mall, Hamngatan 37, 111 53 Stockholm, Sweden",
     price: 21,
   },
   {
-    title: "Andorran Mountain Hideaway",
+    title: "Oslo Klatresenter AS",
     description:
-      "Discover a hidden mountain retreat in Andorra, where snow-capped peaks, alpine meadows, and the charm of a small principality create a tranquil camping haven.",
-    location: "Andorra la Vella",
+      "Experience climbing excellence at Oslo Klatresenter AS in Oslo, Norway. Located at Olaf Helsets vei 5, 0694, this climbing destination provides a challenging and dynamic environment for climbers of all levels.",
+    location: "Olaf Helsets vei 5, 0694 Oslo, Norway",
     price: 16,
   },
   {
-    title: "Belfast Loughside Serenity",
+    title: "Oslo Mikrobuldreri",
     description:
-      "Set up camp along the shores of Belfast Lough, where tranquil waters and the backdrop of green hills offer a serene and rejuvenating camping experience.",
-    location: "Belfast",
+      "Explore the world of micro-bouldering at Oslo Mikrobuldreri in Oslo, Norway. Situated at Pilestredet 27, 0164, this climbing facility offers unique climbs and a welcoming atmosphere for climbers.",
+    location: "Pilestredet 27, 0164 Oslo, Norway",
     price: 18,
   },
   {
-    title: "Valencia Orange Grove Oasis",
+    title: "Vulkan Klatresenter",
     description:
-      "Camp in the heart of Valencia's orange groves, where the sweet scent of citrus blossoms and the sunny Mediterranean climate create a refreshing and idyllic camping retreat.",
-    location: "Valencia",
+      "Conquer the heights at Vulkan Klatresenter in Oslo, Norway. Located at Vulkan 13, 0178, this climbing spot offers thrilling climbs against the urban backdrop of Oslo.",
+    location: "Vulkan 13, 0178 Oslo, Norway",
     price: 20,
   },
   {
-    title: "Slovenian Alpine Meadow Haven",
+    title: "Klatreverket Torshov",
     description:
-      "Pitch your tent in a Slovenian alpine meadow near Bled, where the Julian Alps provide a stunning backdrop for your camping adventure, surrounded by nature and tranquility.",
-    location: "Bled",
+      "Ascend to new heights at Klatreverket Torshov in Oslo, Norway. Situated at Myrens Verksted 3K, 0473, this climbing center offers diverse climbs and a welcoming community for climbers of all levels.",
+    location: "Myrens Verksted 3K, 0473 Oslo, Norway",
     price: 16,
   },
   {
-    title: "Seville Flamenco Fiesta",
-    description:
-      "Experience a flamenco fiesta at our campsite near Seville, where the lively rhythms of Spanish music and the warmth of Andalusian nights create a vibrant and unforgettable camping escape.",
-    location: "Seville",
-    price: 23,
+    title: "Alien Bloc",
+    description: "Embark on an extraterrestrial climbing experience at Alien Bloc in Edinburgh, United Kingdom. Located at 23 Dunedin St, EH7 4JG, this climbing spot offers a unique and challenging environment for climbers.",
+    location: "23 Dunedin St, Edinburgh EH7 4JG, United Kingdom",
+    price: 23
   },
   {
-    title: "Croatian Island Paradise",
-    description:
-      "Discover a paradise on a Croatian island near Hvar, where crystal-clear waters, secluded coves, and Mediterranean landscapes provide an enchanting setting for your camping getaway.",
-    location: "Hvar",
-    price: 22,
+    title: "Eden Rock Edinburgh",
+    description: "Discover the rock-solid adventure at Eden Rock in Edinburgh, United Kingdom. Situated at Edgefield Road Industrial Estate, Loanhead EH20 9TB, this climbing destination offers diverse climbs and a vibrant climbing community.",
+    location: "Edgefield Road Industrial Estate, Loanhead EH20 9TB, United Kingdom",
+    price: 22
   },
   {
-    title: "Rila Monastery Mountain Retreat",
-    description:
-      "Immerse yourself in the beauty of the Rila Monastery and the Bulgarian mountains near Sofia, where ancient spirituality meets the tranquility of nature in a unique camping haven.",
-    location: "Sofia",
-    price: 19,
+    title: "Edinburgh International Climbing Arena",
+    description: "Experience climbing excellence at Edinburgh International Climbing Arena in Newbridge, United Kingdom. Located at South Platt Hill, EH28 8AA, this climbing facility offers thrilling climbs and a dynamic atmosphere.",
+    location: "South Platt Hill, Newbridge EH28 8AA, United Kingdom",
+    price: 19
   },
   {
-    title: "Malaga Coastal Cliff Camp",
-    description:
-      "Set up camp on a coastal cliff near Malaga, where the Mediterranean Sea stretches to the horizon, and the rugged coastline provides a dramatic backdrop for your camping adventure.",
-    location: "Malaga",
-    price: 17,
+    title: "Plezalni Center Ljubljana",
+    description: "Climb in the heart of Ljubljana at Plezalni Center. Located at Pesarska cesta 10, 1000, this climbing spot provides varied climbs and a welcoming atmosphere for climbers of all levels.",
+    location: "Pesarska cesta 10, 1000 Ljubljana, Slovenia",
+    price: 17
   },
   {
-    title: "Greenwich Maritime Escape",
-    description:
-      "Camp by the historic maritime sites of Greenwich, where the Thames River and the rich naval history create a unique and peaceful camping retreat just outside London.",
-    location: "London",
-    price: 21,
+    title: "Balvanija Climbing Center",
+    description: "Challenge yourself at Balvanija Climbing Center in Ljubljana, Slovenia. Situated at Vojkova cesta 58, 1000, this climbing destination offers diverse climbs and a supportive community for climbers.",
+    location: "Vojkova cesta 58, 1000 Ljubljana, Slovenia",
+    price: 21
   },
   {
-    title: "Gdansk Baltic Wharf",
-    description:
-      "Experience the maritime charm of Gdansk at our Baltic wharf campsite, where historic shipyards, colorful architecture, and the Baltic Sea breeze set the stage for a memorable camping experience.",
-    location: "Gdansk",
-    price: 15,
+    title: "Bolder Scena",
+    description: "Embark on a bouldering journey at Bolder Scena in Ljubljana, Slovenia. Located at Magistrova ul. 1, 1000, this climbing spot offers affordable and varied climbs for enthusiasts.",
+    location: "Magistrova ul. 1, 1000 Ljubljana, Slovenia",
+    price: 15
   },
   {
-    title: "Swiss Jura Mountain Refuge",
-    description:
-      "Find refuge in the Swiss Jura Mountains near Lausanne, where pristine landscapes, rolling hills, and the quietude of nature provide a serene and rejuvenating camping escape.",
-    location: "Lausanne",
-    price: 24,
+    title: "Boulder Academy Budapest",
+    description: "Join the climbing community at Boulder Academy Budapest in Hungary. Situated in Budapest, Könyves Kálmán krt. 12-14, 1097, this climbing destination provides a challenging and dynamic environment for climbers.",
+    location: "Budapest, Könyves Kálmán krt. 12-14, 1097 Hungary",
+    price: 24
   },
   {
-    title: "Norwegian Fjord Oasis",
-    description:
-      "Experience the majesty of Norwegian fjords near Stavanger, where towering cliffs, cascading waterfalls, and serene waters create a captivating camping retreat.",
-    location: "Stavanger",
-    price: 23,
+    title: "Gravity Boulder",
+    description: "Defy gravity at Gravity Boulder in Budapest, Hungary. Located at Lövőház u. 2-6, 1024, this climbing spot offers thrilling climbs and a vibrant atmosphere for climbers of all levels.",
+    location: "Budapest, Lövőház u. 2-6, 1024 Hungary",
+    price: 23
   },
   {
-    title: "Maltese Coastal Paradise",
-    description:
-      "Camp along the Maltese coastline near Valletta, where historic fortresses, crystal-clear waters, and the Mediterranean sun create a picturesque and relaxing camping experience.",
-    location: "Valletta",
-    price: 20,
+    title: "Monkey Boulder",
+    description: "Climb with agility at Monkey Boulder in Budapest, Hungary. Situated at Szentendrei út 95, 1033, this climbing center offers diverse climbs and a welcoming community for climbers.",
+    location: "Budapest, Szentendrei út 95, 1033 Hungary",
+    price: 20
   },
   {
-    title: "Minsk Lakeside Retreat",
-    description:
-      "Camp by the lakes near Minsk, where tranquil waters, lush landscapes, and the quietude of nature create a perfect setting for a peaceful camping getaway.",
-    location: "Minsk",
-    price: 17,
+    title: "SPOT Boulder",
+    description: "Discover the SPOT for bouldering in Budapest, Hungary. Located at Rottenbiller u. 35, 1077, this climbing facility offers varied climbs and a supportive environment for climbers of all levels.",
+    location: "Budapest, Rottenbiller u. 35, 1077 Hungary",
+    price: 17
   },
   {
-    title: "Estonian Coastal Forest Oasis",
-    description:
-      "Set up camp in an Estonian coastal forest near Parnu, where the sound of rustling leaves, sandy shores, and the Baltic Sea breeze create a serene and rejuvenating atmosphere.",
-    location: "Parnu",
-    price: 14,
+    title: "Blockfabrik",
+    description: "Unleash your climbing passion at Blockfabrik in Vienna, Austria. Situated at Schlossgasse 10-12, 1050, this climbing spot offers affordable and varied climbs for enthusiasts.",
+    location: "Schlossgasse 10-12, 1050 Wien, Austria",
+    price: 14
   },
   {
-    title: "Bulgarian Rose Valley Retreat",
-    description:
-      "Camp in the heart of the Bulgarian Rose Valley near Plovdiv, where fragrant roses, picturesque landscapes, and the rich cultural heritage provide a unique camping experience.",
-    location: "Plovdiv",
-    price: 21,
-  },
+    title: "Boulderbar",
+    description: "Experience the vibrant bouldering scene at Boulderbar in Vienna, Austria. Located at Hannovergasse 21, 1200, this climbing destination provides diverse climbs and a welcoming community for climbers of all levels.",
+    location: "Hannovergasse 21, 1200 Wien, Austria",
+    price: 21
+  }
 ];

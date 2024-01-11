@@ -5,14 +5,14 @@
 </div>
 
 <div class="container mt-3">
-  <form action="/campgrounds" method="GET" class="m-3">
+  <form action="/gyms" method="GET" class="m-3">
     <div class="input-group input-group-lg form-inline">
       <button class="btn btn-outline-success" id="search" type="submit">Search</button>
     <input type="text" name="search" id="search" placeholder="Search for a city" class="form-control">
     </div>
   </form>
   <h3 class="card-title m-3 text text-center">Nearest results to <%= search.charAt(0).toUpperCase()+search.slice(1) %></h3>
-  <% for( let campground of campgrounds) { %>
+  <% for( let gym of gyms) { %>
   <div class="card mb-3">
     <div class="row d-flex align-items-center">
       <div class="col-md-4 text-center text-md-start mt-2 mt-md-0">
@@ -20,17 +20,17 @@
           crossorigin="anonymous"
           class="img-fluid"
           alt=""
-          src="<%= campground.images[0].index %>"
+          src="<%= gym.images[0].index %>"
         />
       </div>
       <div class="col-md-8 text-center text-md-start">
         <div class="card-body">
-          <h4 class="card-title mb-2"><%= campground.title %></h4>
-          <p class="card-text mb-2 me-md-5"><%= campground.description.substring(0, 140) %></p>
+          <h4 class="card-title mb-2"><%= gym.title %></h4>
+          <p class="card-text mb-2 me-md-5"><%= gym.description.substring(0, 140) %></p>
           <p class="card-text">
-            <p class="text-secondary mb-4"><%= campground.location %></p>
+            <p class="text-secondary mb-4"><%= gym.location %></p>
           </p>
-          <a href="/campgrounds/<%= campground._id %>" class="btn btn-success"
+          <a href="/gyms/<%= gym._id %>" class="btn btn-success"
             >View Details</a
           >
         </div>
@@ -41,7 +41,7 @@
 </div>
   <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>'
-    const campgrounds = { features: <%- JSON.stringify(campgrounds)%> };
+    const gyms = { features: <%- JSON.stringify(gyms)%> };
   </script>
   <script src="/javascripts/clusterMap.js"></script>
 </div>
